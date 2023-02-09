@@ -1,22 +1,21 @@
+import { Link } from "react-router-dom";
 import logo from "../../images/logo.png"
 import { Container, MenuList } from "./styles";
 
 function Navbar () {
     return (
         <Container>
-            <img src={logo} alt="logo"/>
+            <Link to="/"><img src={logo} alt="logo"/></Link>
             <nav>
                 <MenuList>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Listas</a></li>
-                    <li><a href="#">Favoritos</a></li>
-                    <li><a href="#">Conta</a></li>
+                    <li><Link to="/pages/lists">Listas</Link></li>
+                    <li><Link to="/pages/favorits">Favoritos</Link></li>
+                    <li><Link to="/pages/login">Conta</Link></li>
                 </MenuList>
             </nav>
 
             <input type="text" placeholder="Pesquisar"/>
-
-            <button>Sair</button>
+            <img src="https://www.pngplay.com/wp-content/uploads/12/Anime-Profile-Pictures-Download-Free-PNG.png" alt="pefil" />
         </Container>
     );
 }

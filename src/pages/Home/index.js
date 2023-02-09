@@ -16,12 +16,28 @@ function Home () {
             .then(data => setMovies(data.results))
     }, [])
 
+    useEffect( () => {
+        document.title = "Sessão Fácil"
+    }, [])
+
     return (
         <Container>
-            <h1>Filmes em Alta</h1>
-            
+            {movies.slice(0, 1).map(movie => {
+                return(
+                    <div className="Hero-Movie" key={movie.id}>
+                        <Link to={`./details/${movie.id}`}><img src={`${image_path}${movie.poster_path}`} alt={movie.title}/></Link>
+                        <div className="Hero-Title">
+                            <h1>{movie.title}</h1>
+                            <span>Sinopse: {movie.overview}</span>
+                            <span className="release-date">Data de Lançamento: {movie.release_date}</span>
+                        </div>
+                    </div>
+                )
+            })}
+
+            <h2>Filmes em Destaque</h2>
             <MovieList>
-                {movies.map(movie => {
+                {movies.slice(1, 16).map(movie => {
                     return(
                         <Movie key={movie.id}>
                             <Link to={`./details/${movie.id}`}><img src={`${image_path}${movie.poster_path}`} alt={movie.title}/></Link>

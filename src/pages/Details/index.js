@@ -26,19 +26,23 @@ function Details() {
                 setMovie(movieData)
             })
     }, [id])
+
+    useEffect( () => {
+        document.title = "Sessão Fácil / Details"
+    }, [])
     
     return(
         <Container>
-        <div className="movie">
-            <img src={movie.image} alt={movie.sinopse}/>
-            <div className="details">
-                <h1>{movie.title}</h1>
-                <span>Sinopse: {movie.sinopse}</span>
-                <span className="release-date">Data de Lançamento: {movie.releaseDate}</span>
-                <Link to="/"><button>Voltar</button></Link>
+            <div className="movie">
+                <img src={movie.image} alt={movie.sinopse}/>
+                <div className="details">
+                    <h1>{movie.title}</h1>
+                    <span>Sinopse: {movie.sinopse}</span>
+                    <span className="release-date">Data de Lançamento: {movie.releaseDate}</span>
+                    <Link to="/"><button>Voltar</button></Link>
+                </div>
             </div>
-        </div>
-    </Container>
+        </Container>
     )
 }
 
