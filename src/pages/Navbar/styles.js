@@ -4,7 +4,7 @@ export const Container = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #9332D6;
+    background-color: #2E1042;
   
     @media (max-width: 1070px) {
         flex-direction: column;

@@ -44,7 +44,7 @@ export const Container = styled.div`
     }
 
     button {
-        background-color: #9332D6;
+        background-color: #8218c9;
         border: none;
         cursor: pointer;
         border-radius: 1rem;

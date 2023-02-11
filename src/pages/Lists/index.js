@@ -1,18 +1,34 @@
-import { useEffect } from "react";
-import { Container } from "../../components/building/styles";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { APIKey } from "../../config/key";
+import { Genre, GenreList, Background } from "./styles"
+import bgFilmes from "../../images/bg-filmes.jpg"
 
 function Lists () {
 
-    useEffect( () => {
-        document.title = "Sessão Fácil / Lists"
-    }, [])
+    const [genres, setGenres] = useState([]);
+
+    useEffect(() => {
+        fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${APIKey}&language=pt-BR`)
+            .then(response => response.json())
+            .then(data => setGenres(data.genres))
+    }, []);
 
     return (
-        <Container>
-            <h1>Página de Listas</h1>
-            <img src="https://media.tenor.com/1uRoZGYtPzEAAAAC/anime-girl.gif" alt="girl anime stop" />
-            <span>Opa, está página ainda está em construção...</span>
-        </Container>
+        <div>
+            <Background src={bgFilmes}/>
+            <GenreList>
+                {genres.map(genre => {
+                    return (
+                    <Link to={`/genres/${genre.id}`}>
+                        <Genre>
+                            <span>{genre.name}</span>
+                        </Genre>
+                    </Link>
+                    )
+                })}
+            </GenreList>
+        </div>
     )
 }
 

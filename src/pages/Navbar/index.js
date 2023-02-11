@@ -8,9 +8,9 @@ function Navbar () {
             <Link to="/"><img src={logo} alt="logo"/></Link>
             <nav>
                 <MenuList>
-                    <li><Link to="/pages/lists">Listas</Link></li>
-                    <li><Link to="/pages/favorits">Favoritos</Link></li>
-                    <li><Link to="/pages/login">Conta</Link></li>
+                    <li><Link to="/lists">Listas</Link></li>
+                    <li><Link to="/favorits">Favoritos</Link></li>
+                    <li><Link to="/login">Conta</Link></li>
                 </MenuList>
             </nav>
 
