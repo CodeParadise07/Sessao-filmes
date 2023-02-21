@@ -1,12 +1,6 @@
-import { useEffect } from 'react'
 import { Container } from '../../components/building/styles'
 
 function Favorits () {
-
-    useEffect( () => {
-        document.title = "Sessão Fácil / Favorits"
-    }, [])
-
     return (
         <Container>
             <h1>Página de Favoritos</h1>

@@ -13,30 +13,29 @@ export const GenreList = styled.ul`
         align-items: center;
         justify-content: center;
         text-decoration: none;
-        transition: all 0.3s;
-        margin: 1.1rem;
-        background-color: #9500DB;
-        border-radius: 25px;
+        width: 100%;
     }
-
-    a:hover {
-        background-color: #7100A6;
-        transform: scale(1.1);
-    }
-    
 `
 
 export const Genre = styled.li`
-    padding: 1rem;
+    display: flex;
+    justify-content: center;
+
+    border-radius: 25px;    
+    margin: 0.9rem;
+
+    transition: all 0.3s;
+    background-color: #9500DB;
     
-   
+    :hover {
+        background-color: #7100A6;
+        transform: scale(1.1);
+    }
 
     span {
         font-weight: bold;
         font-size: 120%;
-        text-align: center;
         color: #fff;
-        
     }
 `
 
