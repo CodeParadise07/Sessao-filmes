@@ -1,6 +1,6 @@
 import { Container } from "../../components/building/styles";
 
-function Login() {
+export function Login() {
     return (
         <Container>
             <h1>Página de Login</h1>
@@ -12,5 +12,3 @@ function Login() {
         </Container>
     );
 }
-
-export default Login;

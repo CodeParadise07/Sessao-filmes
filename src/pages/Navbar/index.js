@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "../../images/logo.png"
 import { Container, MenuList } from "./styles";
 
-function Navbar () {
+export function Navbar () {
     return (
         <Container>
             <Link to="/"><img src={logo} alt="logo"/></Link>
@@ -19,5 +19,3 @@ function Navbar () {
         </Container>
     );
 }
-
-export default Navbar;

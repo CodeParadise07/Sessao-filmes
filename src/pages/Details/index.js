@@ -1,10 +1,18 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { APIKey } from "../../config/key";
-import { Container } from "./styles";
+import { Container, Buttons } from "./styles";
 import apiUrl from "../../config/apiUrl";
+import { ButtonTrailer } from "../../components/ButtonTrailer";
 
-function Details() {
+export function Details() {
+
+    const navigate = useNavigate();
+
+    const handleBack = () => {
+        navigate(-1);
+    };
+
     const { id } = useParams();
 
     const [movie, setMovie] = useState({});
@@ -46,13 +54,12 @@ function Details() {
                     <span className="release-date">
                         Data de Lançamento: {movie.releaseDate}
                     </span>
-                    <Link to="/">
-                        <button>Voltar</button>
-                    </Link>
+                    <Buttons>
+                        <ButtonTrailer movieId={movie.id} />
+                        <button onClick={handleBack}>Voltar</button>
+                    </Buttons>
                 </div>
             </div>
         </Container>
     );
 }
-
-export default Details;

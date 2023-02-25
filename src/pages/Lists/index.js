@@ -5,7 +5,7 @@ import { Genre, GenreList, Background } from "./styles";
 import bgFilmes from "../../images/bg-filmes.jpg";
 import apiUrl from "../../config/apiUrl";
 
-function Lists() {
+export function Lists() {
     const [genres, setGenres] = useState([]);
 
     const getGenres = async () => {
@@ -43,5 +43,3 @@ function Lists() {
         </div>
     );
 }
-
-export default Lists;

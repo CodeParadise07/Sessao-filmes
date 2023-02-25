@@ -1,10 +1,12 @@
-import { Container, MovieList, Movie } from "./styles";
+import { Container } from "./styles";
 import { APIKey } from "../../config/key";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import apiUrl from "../../config/apiUrl";
+import { MovieCard } from "../../components/MovieCard";
+import { ButtonTrailer } from "../../components/ButtonTrailer";
 
-function Home() {
+export function Home() {
     const pageTitle = () => {
         document.title = "Sessão Fácil";
     };
@@ -36,7 +38,7 @@ function Home() {
             {movies.slice(0, 1).map((movie) => {
                 return (
                     <div className="Hero-Movie" key={movie.id}>
-                        <Link to={`./details/${movie.id}`}>
+                        <Link to={`/details/${movie.id}`}>
                             <img
                                 src={`${image_path}${movie.poster_path}`}
                                 alt={movie.title}
@@ -48,29 +50,14 @@ function Home() {
                             <span className="release-date">
                                 Data de Lançamento: {movie.release_date}
                             </span>
+                            <ButtonTrailer movieId={movie.id} />
                         </div>
                     </div>
                 );
             })}
 
             <h2>Filmes em Destaque</h2>
-            <MovieList>
-                {movies.slice(1, 16).map((movie) => {
-                    return (
-                        <Movie key={movie.id}>
-                            <Link to={`./details/${movie.id}`}>
-                                <img
-                                    src={`${image_path}${movie.poster_path}`}
-                                    alt={movie.title}
-                                />
-                            </Link>
-                            <span>{movie.title}</span>
-                        </Movie>
-                    );
-                })}
-            </MovieList>
+            <MovieCard movies={movies} />
         </Container>
     );
 }
-
-export default Home;

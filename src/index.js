@@ -1,14 +1,14 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import "./global.css";
-import Navbar from "./pages/Navbar";
-import Home from "./pages/Home";
+import { Navbar } from "./pages/Navbar";
+import { Home } from "./pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Details from "./pages/Details";
-import Lists from "./pages/Lists";
-import Favorits from "./pages/Favorits";
-import Login from "./pages/Login";
-import Genres from "./pages/Genres";
+import { Details } from "./pages/Details";
+import { Lists } from "./pages/Lists";
+import { Favorits } from "./pages/Favorits";
+import { Login } from "./pages/Login";
+import { Genres } from "./pages/Genres";
 
 createRoot(document.getElementById("root")).render(
     <BrowserRouter>

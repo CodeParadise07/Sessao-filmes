@@ -69,3 +69,8 @@ export const Container = styled.div`
         opacity: 0.5;
     }
 `
+
+export const Buttons = styled.div`
+    display: flex;
+    gap: 1rem;
+`
