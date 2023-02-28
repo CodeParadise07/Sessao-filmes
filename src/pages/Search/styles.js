@@ -7,10 +7,11 @@ export const Title = styled.h2`
 
     span {
         background-color: #7100A6;
+        padding: 0.9rem;
         border-radius: 5px;
     }
 
     @media (max-width: 945px) {
-        padding: 2rem;
+        font-size: 1.6rem;
     }
 `

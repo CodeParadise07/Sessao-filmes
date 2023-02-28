@@ -6,53 +6,62 @@ export const Container = styled.header`
     justify-content: space-around;
     background-color: #2E1042;
   
-    @media (max-width: 1070px) {
+    @media (max-width: 945px) {
         flex-direction: column;
         align-items: center;
 
-        input {
-            margin: 19px 0.8rem;
-        }
+        form {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        margin-top: 1rem;
+    }
 
-        button {
-            margin-top: 1rem;
-            padding: 10px
-        }
+        
     }
   
     img {
         height: 60px;
         margin: 1rem;
     }
+
+    form {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    }
   
     input {
-        outline: none;
+        padding: .6rem 1rem;
+        border-radius: 4px;
         border: none;
+        outline: none;
         background: #D9D9D9;
-        width: 100%;
-        width: 400px;
-        padding: 0.8rem 1rem;
-        margin: 19px 0.8rem;
-        border-radius: 5px;
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
 
     input::placeholder {
         text-align: center;
         font-weight: bold;
         color: rgba(136, 136, 136, 0.38);
-        font-size: 1.4rem;
     }
 
     button {
-        padding: 0.3rem 2rem;
-        margin: 0.3rem 0%;
-        border: none;
-        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        background-color: #8218c9;
+        border: 2px solid #8218c9;
+        padding: .4rem 1rem;
+        font-size: 1.7rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: .4s;
     }
 
     button:hover {
-        cursor: pointer;
+        background-color: transparent;
+        color: #8218c9;
+        
     }
 
 `

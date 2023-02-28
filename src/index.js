@@ -9,6 +9,7 @@ import { Lists } from "./pages/Lists";
 import { Favorits } from "./pages/Favorits";
 import { Login } from "./pages/Login";
 import { Genres } from "./pages/Genres";
+import { Search } from "./pages/Search";
 
 createRoot(document.getElementById("root")).render(
     <BrowserRouter>
@@ -20,6 +21,7 @@ createRoot(document.getElementById("root")).render(
             <Route path="/genres/:id" element={<Genres />} />
             <Route path="/favorits" element={<Favorits />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/search" element={<Search />} />
         </Routes>
     </BrowserRouter>
 );
