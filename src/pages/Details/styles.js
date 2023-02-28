@@ -29,14 +29,18 @@ export const Container = styled.div`
     @media (max-width: 550px) {
         .movie {
             flex-direction: column;
-            
         }
 
         .details {
-            padding: 3rem 0;
+            justify-content: center;
             align-items: center;
+            max-width: 100%;
+            padding: 2rem 1.5rem;
+            margin: 0;
             font-size: 120%;
         }
+
+        
 
         img {
             width: 100%;

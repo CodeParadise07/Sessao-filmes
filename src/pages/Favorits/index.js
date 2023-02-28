@@ -1,5 +1,4 @@
 import { Container } from "../../components/building/styles";
-import { ButtonTrailer } from "../../components/ButtonTrailer";
 
 export function Favorits() {
     return (
@@ -10,7 +9,6 @@ export function Favorits() {
                 alt="girl anime stop"
             />
             <span>Opa, está página ainda está em construção...</span>
-            <ButtonTrailer />
         </Container>
     );
 }

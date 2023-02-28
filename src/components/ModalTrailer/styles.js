@@ -6,7 +6,6 @@ export const Modal = styled.div`
     height: 100vh;
     top: 0;
     left: 0;
-    /* background-color: rgba(52, 52, 50, 0.749); */
     background-color: rgba(255, 255, 255, 0.212);
     backdrop-filter: blur(6px);
     opacity: 0;
@@ -43,5 +42,13 @@ export const ContentModal = styled.div`
         border-width: 0;
         width: 640px;
         height: 360px;
+    }
+
+    @media (max-width: 550px) {
+        iframe {
+            border-width: 0;
+            width: 370px;
+            height: 240px;
+        }
     }
 `;
