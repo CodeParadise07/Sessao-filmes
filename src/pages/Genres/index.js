@@ -4,8 +4,14 @@ import { APIKey } from "../../config/key";
 import { Title } from "./styles";
 import apiUrl from "../../config/apiUrl";
 import { MovieCard } from "../../components/MovieCard";
+import { Pagination } from "../../components/Pagination";
 
 export function Genres() {
+    const [currentPage, setCurrentPage] = useState(1);
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+    
     const { id } = useParams();
 
     const [movies, setMovies] = useState([]);
@@ -30,21 +36,21 @@ export function Genres() {
     const getMovies = async () => {
         try {
             const response = await apiUrl.get(
-                `discover/movie?api_key=${APIKey}&with_genres=${id}&language=pt-BR`
+                `discover/movie?api_key=${APIKey}&with_genres=${id}&language=pt-BR&page=${currentPage}`
             );
-
+    
             const data = response.data.results;
-
+    
             setMovies(data);
         } catch (error) {
             console.log(error);
         }
-    };
+    }
 
     useEffect(() => {
         getTitle();
         getMovies();
-    }, [id]);
+    }, [id, currentPage]);
 
     return (
         <div>
@@ -52,6 +58,11 @@ export function Genres() {
                 {genre && <span>Filmes do genêro: {genre.name}</span>}
             </Title>
             <MovieCard movies={movies} />
+            <Pagination
+                currentPage={currentPage}
+                onPageChange={handlePageChange}
+                totalPages={10}
+            />
         </div>
     );
 }

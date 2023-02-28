@@ -21,8 +21,6 @@ export function Navbar () {
         setSearch("");
     }
 
-
-
     return (
         <Container>
             <MenuMobile 

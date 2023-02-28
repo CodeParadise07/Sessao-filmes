@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import apiUrl from "../../config/apiUrl";
 import { MovieCard } from "../../components/MovieCard";
 import { ButtonTrailer } from "../../components/ButtonTrailer";
+import { Pagination } from "../../components/Pagination";
 
 export function Home() {
     const pageTitle = () => {
@@ -12,12 +13,13 @@ export function Home() {
     };
 
     const [movies, setMovies] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
     const image_path = "https://image.tmdb.org/t/p/w500";
 
     const getMovies = async () => {
         try {
             const response = await apiUrl.get(
-                `movie/popular?api_key=${APIKey}&language=pt-BR&page=1`
+                `movie/popular?api_key=${APIKey}&language=pt-BR&page=${currentPage}`
             );
 
             const data = response.data.results;
@@ -31,7 +33,11 @@ export function Home() {
     useEffect(() => {
         getMovies();
         pageTitle();
-    }, []);
+    }, [currentPage]);
+
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
 
     return (
         <Container>
@@ -58,6 +64,12 @@ export function Home() {
 
             <h2>Filmes em Destaque</h2>
             <MovieCard movies={movies} />
+
+            <Pagination
+                currentPage={currentPage}
+                onPageChange={handlePageChange}
+                totalPages={10}
+            />
         </Container>
     );
 }
