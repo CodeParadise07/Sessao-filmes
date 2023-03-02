@@ -40,8 +40,6 @@ export const Container = styled.div`
             font-size: 120%;
         }
 
-        
-
         img {
             width: 100%;
         }
@@ -76,5 +74,7 @@ export const Container = styled.div`
 
 export const Buttons = styled.div`
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     gap: 1rem;
 `

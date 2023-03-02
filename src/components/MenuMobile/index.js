@@ -19,7 +19,7 @@ export function MenuMobile({menuIsVisible, setMenuIsVisible}) {
         <MenuList>
           <li><Link to="/" onClick={handleCloseMenu}>Home</Link></li>
           <li><Link to="/lists" onClick={handleCloseMenu}>Listas</Link></li>
-          <li><Link to="/favorits" onClick={handleCloseMenu}>Favoritos</Link></li>
+          <li><Link to="/favorites" onClick={handleCloseMenu}>Favoritos</Link></li>
           <li><Link to="/login" onClick={handleCloseMenu}>Conta</Link></li>
         </MenuList>
       </nav>

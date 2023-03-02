@@ -40,11 +40,10 @@ export function Navbar () {
             <nav>
                 <MenuList>
                     <li><Link to="/lists">Listas</Link></li>
-                    <li><Link to="/favorits">Favoritos</Link></li>
+                    <li><Link to="/favorites">Favoritos</Link></li>
                     <li><Link to="/login">Conta</Link></li>
                 </MenuList>
             </nav>
-            {/* <img src="https://www.pngplay.com/wp-content/uploads/12/Anime-Profile-Pictures-Download-Free-PNG.png" alt="pefil" /> */}
 
             <RiMenu3Fill size={45} onClick={() => setMenuIsVisible(!menuIsVisible)} className="mobile"/>
         </Container>

@@ -6,7 +6,7 @@ import { Home } from "./pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Details } from "./pages/Details";
 import { Lists } from "./pages/Lists";
-import { Favorits } from "./pages/Favorits";
+import { Favorites } from "./pages/Favorites";
 import { Login } from "./pages/Login";
 import { Genres } from "./pages/Genres";
 import { Search } from "./pages/Search";
@@ -19,7 +19,7 @@ createRoot(document.getElementById("root")).render(
             <Route path="/details/:id" element={<Details />} />
             <Route path="/lists" element={<Lists />} />
             <Route path="/genres/:id" element={<Genres />} />
-            <Route path="/favorits" element={<Favorits />} />
+            <Route path="/favorites" element={<Favorites />} />
             <Route path="/login" element={<Login />} />
             <Route path="/search" element={<Search />} />
         </Routes>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { APIKey } from "../../config/key";
-import { Genre, GenreList, Background } from "./styles";
+import { Container, Genre, GenreList, Background } from "./styles";
 import bgFilmes from "../../images/bg-filmes.jpg";
 import apiUrl from "../../config/apiUrl";
 
@@ -27,8 +27,11 @@ export function Lists() {
     }, []);
 
     return (
-        <div>
+        <Container>
             <Background src={bgFilmes} />
+            <div>
+                <h2>Genêros</h2>
+            </div>
             <GenreList>
                 {genres.map((genre) => {
                     return (
@@ -40,6 +43,6 @@ export function Lists() {
                     );
                 })}
             </GenreList>
-        </div>
+        </Container>
     );
 }

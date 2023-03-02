@@ -6,7 +6,6 @@ import apiUrl from "../../config/apiUrl";
 import { ButtonTrailer } from "../../components/ButtonTrailer";
 
 export function Details() {
-
     const navigate = useNavigate();
 
     const handleBack = () => {
@@ -19,12 +18,41 @@ export function Details() {
 
     const image_path = "https://image.tmdb.org/t/p/w500";
 
+    const storedMovies = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
+
+    const [isFavorite, setIsFavorite] = useState(false);
+
+    const checkIsFavorite = () => {
+        const isCurrentMovieFavorite = storedMovies.some(
+            (movie) => movie.id === id
+        );
+        setIsFavorite(isCurrentMovieFavorite);
+    };
+
+    const handleFavorite = () => {
+        const newMovie = {
+            id: movie.id,
+            title: movie.title,
+            image: movie.image,
+        };
+        localStorage.setItem(
+            "favoriteMovies",
+            JSON.stringify([...storedMovies, newMovie])
+        );
+        setIsFavorite(true);
+    };
+
+    const handleUnfavorite = () => {
+        const filteredMovies = storedMovies.filter((movie) => movie.id !== id);
+        localStorage.setItem("favoriteMovies", JSON.stringify(filteredMovies));
+        setIsFavorite(false);
+    };
+
     const getDetail = async () => {
         try {
             const response = await apiUrl.get(
                 `movie/${id}?api_key=${APIKey}&language=pt-BR`
             );
-
             const { title, poster_path, overview, release_date } =
                 response.data;
             const movieData = {
@@ -42,6 +70,7 @@ export function Details() {
 
     useEffect(() => {
         getDetail();
+        checkIsFavorite();
     }, [id]);
 
     return (
@@ -56,6 +85,13 @@ export function Details() {
                     </span>
                     <Buttons>
                         <ButtonTrailer movieId={movie.id} />
+                        <button
+                            onClick={
+                                isFavorite ? handleUnfavorite : handleFavorite
+                            }
+                        >
+                            {isFavorite ? "Remover dos favoritos" : "Favoritar"}
+                        </button>
                         <button onClick={handleBack}>Voltar</button>
                     </Buttons>
                 </div>
