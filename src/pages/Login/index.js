@@ -1,4 +1,5 @@
 import { Container } from "../../components/building/styles";
+import { Footer } from "../../components/Footer";
 
 export function Login() {
     return (
@@ -9,6 +10,7 @@ export function Login() {
                 alt="girl anime stop"
             />
             <span>Opa, está página ainda está em construção...</span>
+            <Footer />
         </Container>
     );
 }

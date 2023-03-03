@@ -4,13 +4,8 @@ export const PaginationWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
-  margin-bottom: 10px;
-
-  @media (max-width: 768px) {
-    margin-top: 30px;
-    margin-bottom: 20px;
-  }
+  padding-top: 4rem;
+  padding-bottom: 6rem;
 `;
 
 export const PageButton = styled.button`
@@ -37,7 +32,7 @@ export const PageButton = styled.button`
   }
 
   @media (max-width: 768px) {
-    padding: 5px;
+    padding: 6px;
     font-size: 14px;
   }
 `;

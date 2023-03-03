@@ -6,6 +6,7 @@ import apiUrl from "../../config/apiUrl";
 import { MovieCard } from "../../components/MovieCard";
 import { ButtonTrailer } from "../../components/ButtonTrailer";
 import { Pagination } from "../../components/Pagination";
+import { Footer } from "../../components/Footer";
 
 export function Home() {
     const pageTitle = () => {
@@ -70,6 +71,7 @@ export function Home() {
                 onPageChange={handlePageChange}
                 totalPages={10}
             />
+            <Footer />
         </Container>
     );
 }

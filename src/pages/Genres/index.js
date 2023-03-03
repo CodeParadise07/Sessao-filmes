@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { APIKey } from "../../config/key";
-import { Title } from "./styles";
+import { Container, Title } from "./styles";
 import apiUrl from "../../config/apiUrl";
 import { MovieCard } from "../../components/MovieCard";
 import { Pagination } from "../../components/Pagination";
+import { Footer } from "../../components/Footer";
 
 export function Genres() {
     const [currentPage, setCurrentPage] = useState(1);
@@ -53,7 +54,7 @@ export function Genres() {
     }, [id, currentPage]);
 
     return (
-        <div>
+        <Container>
             <Title>
                 {genre && <span>Filmes do genêro: {genre.name}</span>}
             </Title>
@@ -63,6 +64,7 @@ export function Genres() {
                 onPageChange={handlePageChange}
                 totalPages={10}
             />
-        </div>
+            <Footer />
+        </Container>
     );
 }

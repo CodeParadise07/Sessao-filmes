@@ -4,6 +4,7 @@ import { APIKey } from "../../config/key";
 import { Container, Genre, GenreList, Background } from "./styles";
 import bgFilmes from "../../images/bg-filmes.jpg";
 import apiUrl from "../../config/apiUrl";
+import { Footer } from "../../components/Footer";
 
 export function Lists() {
     const [genres, setGenres] = useState([]);
@@ -43,6 +44,7 @@ export function Lists() {
                     );
                 })}
             </GenreList>
+            <Footer />
         </Container>
     );
 }

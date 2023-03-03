@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Container, MovieList, Movie } from "./styles";
 import { Link } from "react-router-dom";
+import { Footer } from "../../components/Footer";
 
 export function Favorites() {
     const [movies, setMovies] = useState([]);
@@ -32,6 +33,7 @@ export function Favorites() {
                     );
                 })}
             </MovieList>
+            <Footer />
         </Container>
     );
 }

@@ -4,6 +4,7 @@ import { APIKey } from "../../config/key";
 import { Container, Buttons } from "./styles";
 import apiUrl from "../../config/apiUrl";
 import { ButtonTrailer } from "../../components/ButtonTrailer";
+import { Footer } from "../../components/Footer";
 
 export function Details() {
     const navigate = useNavigate();
@@ -96,6 +97,7 @@ export function Details() {
                     </Buttons>
                 </div>
             </div>
+            <Footer />
         </Container>
     );
 }

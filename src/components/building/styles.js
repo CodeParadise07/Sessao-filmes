@@ -3,9 +3,10 @@ import styled from 'styled-components'
 export const Container = styled.div`
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
     gap: 2rem;
+    position: relative;
+    min-height: 100vh;
 
     h1 {
         margin-top: 1rem;

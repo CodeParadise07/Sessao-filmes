@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+    position: relative;
+    min-height: 100vh;
+
     div {
         display: flex;
         justify-content: center;
@@ -20,8 +23,8 @@ export const GenreList = styled.ul`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     column-gap: 3rem;
+    padding-bottom: 5rem;
     align-items: center;
-    padding: 2rem 0;
     margin: 0 1rem;
 
     a {
@@ -66,7 +69,11 @@ export const Background = styled.img`
     height: 100vh;
     opacity: 40%;
 
-    @media (max-width: 945px) {
+    @media (max-width: 982px) {
         display: none;
+    }
+
+    @media (max-width: 1219px) {
+        height: 94vh;
     }
 `;

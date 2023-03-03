@@ -3,7 +3,8 @@ import { useSearchParams } from "react-router-dom";
 import { MovieCard } from "../../components/MovieCard";
 import { APIKey } from "../../config/key";
 import apiUrl from "../../config/apiUrl";
-import { Title } from "./styles";
+import { Container, Title } from "./styles";
+import { Footer } from "../../components/Footer";
 
 export const Search = () => {
     const [searchParams] = useSearchParams();
@@ -30,12 +31,14 @@ export const Search = () => {
     }, [query]);
 
     return (
-        <div>
+        <Container>
             <Title>
                 <span>Resultados para: {query}</span>
             </Title>
 
             <MovieCard movies={movies} />
-        </div>
+
+            <Footer />
+        </Container>
     );
 };
