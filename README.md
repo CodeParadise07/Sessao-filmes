@@ -12,7 +12,6 @@ Este é um site de filmes que permite aos usuários visualizarem informações s
  - Axios
  - React-icons
  - React-router-dom
-
 - API The Movie DB
 
 ## Funcionalidades 🚀
