@@ -39,7 +39,7 @@ export function Navbar () {
 
             <nav>
                 <MenuList>
-                    <li><Link to="/lists">Listas</Link></li>
+                    <li><Link to="/lists">Genêros</Link></li>
                     <li><Link to="/favorites">Favoritos</Link></li>
                     <li><Link to="/login">Conta</Link></li>
                 </MenuList>
